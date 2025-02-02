@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fan-blades</title>
+    <style>
+        .a_fans{
+            width: 300px;
+            height: 300px;
+            background-image: url("img/fan-blades-png.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 100px auto;
+            animation: fan 1s linear;
+            animation-iteration-count: infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes fan {
+            0%{
+                transform: rotateZ(0deg);
+            }
+            100%{
+                transform:  rotateZ(359deg);;
+            }
+            
+        }
+    </style>
+    <script>
+         // function defination....
+      function stopFan(){
+          alert('ok1');
+      }
+
+       function startFan(speed){
+          if(speed == 1){
+            document.getElementById('fansbox').style.animationPlayState = 'running';
+            document.getElementById('fansbox').style.animationDuration = '0.2s';
+          }
+          else if(speed == 2){
+            document.getElementById('fansbox').style.animationPlayState = 'running';
+            document.getElementById('fansbox').style.animationDuration = '0.2s';
+          }
+          else {
+            //   alert('3');
+            document.getElementById('fansbox').style.animationPlayState = 'running';
+            document.getElementById('fansbox').style.animationDuration = '0.3s';
+          }
+       }
+
+    </script>
+</head>
+ 
+<body>
+    <div class="a_fans" id="fansbox">
+
+    </div>
+    <div style="text-align: center;">
+         
+        <button onclick="stopFan('ok1')">stop</button>
+        <button onclick="startFan(1)">1</button>
+        <button onclick="startFan(2)">2</button>
+        <button onclick="startFan(3)">3</button>
+    </div>
+   
+</body>
+</html>
