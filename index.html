@@ -28,24 +28,24 @@
         }
     </style>
     <script>
-         // function defination....
-      function stopFan(){
-          alert('ok1');
-      }
+         // function defination...
 
        function startFan(speed){
-          if(speed == 1){
+        if(speed == 0){
+           document.querySelector('.a_fans').style.animationPlayState = 'paused';
+        }
+        else if(speed == 1){
             document.getElementById('fansbox').style.animationPlayState = 'running';
-            document.getElementById('fansbox').style.animationDuration = '0.2s';
+            document.getElementById('fansbox').style.animationDuration = '1s';
           }
           else if(speed == 2){
-            document.getElementById('fansbox').style.animationPlayState = 'running';
-            document.getElementById('fansbox').style.animationDuration = '0.2s';
+            document.querySelector('.a_fans').style.animationPlayState = 'running';
+            document.querySelector('#fansbox').style.animationDuration = '0.1s';
           }
           else {
             //   alert('3');
             document.getElementById('fansbox').style.animationPlayState = 'running';
-            document.getElementById('fansbox').style.animationDuration = '0.3s';
+            document.getElementById('fansbox').style.animationDuration = '0.5s';
           }
        }
 
@@ -58,7 +58,7 @@
     </div>
     <div style="text-align: center;">
          
-        <button onclick="stopFan('ok1')">stop</button>
+        <button onclick="startFan(0)">stop</button>
         <button onclick="startFan(1)">1</button>
         <button onclick="startFan(2)">2</button>
         <button onclick="startFan(3)">3</button>
